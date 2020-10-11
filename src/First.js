@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { WidgetOrders, WidgetFeatures } from "./components";
 import img__doctor from "./assets/images/img__doctor.png";
 
+// Не ошибка, просто рекомендация: когда зашиваешь тестовые данные, лучше использовать capslock = const ORDERS.
 const orders = [
   {
     date: new Date("2020-10-08 19:00"),
@@ -38,6 +39,7 @@ const orders = [
   },
 ];
 
+// Возможно лучше использовать lodash
 const sortedOrders = orders.sort(function compare(a, b) {
   var dateA = new Date(a.date);
   var dateB = new Date(b.date);

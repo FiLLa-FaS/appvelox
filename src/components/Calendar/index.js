@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Calendar from "react-calendar";
+// Используй date-fns для работы с датами.
 
 const ReactCalendar = ({ orders, onSelectDate  }) => {
 
     const renderDay = (orders, date) => {
 
+      // Вот это я тебе в аудиозаписи запишу
       const todayTasks = orders.filter(
         (order) =>
           (order.date.getDate() === date.date.getDate()) &

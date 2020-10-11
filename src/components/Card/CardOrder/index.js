@@ -4,6 +4,8 @@ import { UiButton } from "../..";
 
 const CardOrder = ({ order, className }) => {
   const showDate = () => {
+
+    // Это очень много для того, чтобы просто показать дату. Испозльзуй date-fns. Там это пару строк, если не одна.
     let days = [
       "Воскресенье",
       "Понедельник",

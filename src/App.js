@@ -9,10 +9,13 @@ function App() {
   return (
     <BrowserRouter>
       <Wrapper>
+        {/* Не хватает семантической верстки. <aside></aside>. Для навигации используй <nav></nav> */}
+        {/* NavAside это именно навигация. А что, если у нас в левой колонке будет что-то, что к навигации не относится? Нужна обертка. */}
         <NavAside />
         <Content>
           <Header />
           <Switch>
+            {/* Неудачные названия для страниц. Ни First, ни Second мне ни о чем не говорят. Особенно когда видно, что path=orders. */}
             <Route path="/" exact component={First} />
             <Route path="/orders" component={Second} />
           </Switch>

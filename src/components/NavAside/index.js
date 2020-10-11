@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { UiButton } from "..";
+// __ в названиях импортов это лишние. Это же не БЭМ. Тут одной черточки достатчно
 import img__logo from "../../assets/images/img__logo.png";
 import {icn__heart, icn__stethoscope, icn__message, icn__todo, icn__book, icn__help} from '../../assets/icons'
 
@@ -10,6 +11,7 @@ const NavAside = () => {
       <Nav>
         <Logo>Логотип</Logo>
         <NavList>
+          {/* Пункты лучше убрать в массив. и по нему проходиться .map*/}
           <ListItem className="active">
             <ItemIcon>{icn__heart}</ItemIcon>
             <ItemLink>Профиль</ItemLink>
