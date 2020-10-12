@@ -1,31 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import { CardFeature } from "../..";
-import {icn__info, icn__tubes, icn__file, icn__clock} from '../../../assets/icons'
+import {icn_info, icn_tubes, icn_file, icn_clock} from '../../../assets/icons'
 
 const features = [
   {
     title: "Информация о пациенте",
     content: ['Ваши личные данные', 'Рекомендации врачей', 'История болезней'],
-    icon: icn__info,
+    icon: icn_info,
     active: true
   },
   {
     title: "Результаты анализов",
     content: ['Вы можете узнать здесь результаты своих анализов'],
-    icon: icn__tubes,
+    icon: icn_tubes,
     active: false
   },
   {
     title: "Добавить  информацию",
     content: ['Добавляйте в свою электронную медицинскую карту новые данные'],
-    icon: icn__file,
+    icon: icn_file,
     active: false
   },
   {
     title: "История приемов",
     content: ['Вся информация о полученных услугах за все время хранится здесь'],
-    icon: icn__clock,
+    icon: icn_clock,
     active: false
   },
 ]

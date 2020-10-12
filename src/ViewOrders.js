@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Calendar, WidgetScroll } from "./components";
-import img__doctor from "./assets/images/img__doctor.png";
-import img__doctor2 from "./assets/images/img__doctor2.png";
-import { icn__arr } from "./assets/icons";
+import img_doctor from "./assets/images/img_doctor.png";
+import img_doctor2 from "./assets/images/img_doctor2.png";
+import { icn_arr } from "./assets/icons";
 
-const orders = [
+const ORDERS = [
   {
     date: new Date("2020-10-08 19:00"),
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
   {
@@ -20,7 +20,7 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Харьков В. С.",
-    doctorImg: img__doctor2,
+    doctorImg: img_doctor2,
     doctorCareer: "Терапевтическое отделение",
   },
   {
@@ -28,7 +28,7 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
   {
@@ -36,12 +36,12 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Харьков В. С.",
-    doctorImg: img__doctor2,
+    doctorImg: img_doctor2,
     doctorCareer: "Терапевтическое отделение",
   },
 ];
 
-const sortedOrders = orders.sort(function compare(a, b) {
+const sortedOrders = ORDERS.sort(function compare(a, b) {
   var dateA = new Date(a.date);
   var dateB = new Date(b.date);
   return dateA - dateB;
@@ -49,7 +49,7 @@ const sortedOrders = orders.sort(function compare(a, b) {
 
 
 
-function Second() {
+function ViewOrders() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [allOrders, setAllOrders] = useState(false);
 
@@ -82,7 +82,7 @@ function Second() {
       <RowTitle>
         <NavLink to={"/"}>
           <Link>
-            {icn__arr}
+            {icn_arr}
             <Title>Мои записи</Title>
           </Link>
         </NavLink>
@@ -160,4 +160,4 @@ const Link = styled.div`
     align-items: center;
 `;
 
-export default Second;
+export default ViewOrders;

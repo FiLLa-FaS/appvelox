@@ -1,16 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { WidgetOrders, WidgetFeatures } from "./components";
-import img__doctor from "./assets/images/img__doctor.png";
+import img_doctor from "./assets/images/img_doctor.png";
 
-// Не ошибка, просто рекомендация: когда зашиваешь тестовые данные, лучше использовать capslock = const ORDERS.
-const orders = [
+const ORDERS = [
   {
     date: new Date("2020-10-08 19:00"),
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
   {
@@ -18,7 +17,7 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
   {
@@ -26,7 +25,7 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
   {
@@ -34,19 +33,19 @@ const orders = [
     address:
       'СПБ ГБУЗ "Городская поликлиника №25", пр. Солидарности, д. 1, к. 1, лит. А',
     doctorName: "Малушко Т. Н.",
-    doctorImg: img__doctor,
+    doctorImg: img_doctor,
     doctorCareer: "Хирургия",
   },
 ];
 
 // Возможно лучше использовать lodash
-const sortedOrders = orders.sort(function compare(a, b) {
+const sortedOrders = ORDERS.sort(function compare(a, b) {
   var dateA = new Date(a.date);
   var dateB = new Date(b.date);
   return dateA - dateB;
 });
 
-function First() {
+function ViewAccount() {
   return (
     <Wrapper>
       <Row>
@@ -80,4 +79,4 @@ const Row = styled.div`
   }
 `;
 
-export default First;
+export default ViewAccount;

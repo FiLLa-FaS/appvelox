@@ -1,9 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 import { UiButton } from "..";
-// __ в названиях импортов это лишние. Это же не БЭМ. Тут одной черточки достатчно
-import img__logo from "../../assets/images/img__logo.png";
-import {icn__heart, icn__stethoscope, icn__message, icn__todo, icn__book, icn__help} from '../../assets/icons'
+import img_logo from "../../assets/images/img_logo.png";
+import {icn_heart, icn_stethoscope, icn_message, icn_todo, icn_book, icn_help} from '../../assets/icons'
+
+const NAV = [
+  {
+    id: 1,
+    title: 'Профиль',
+    icon: icn_heart,
+    active: true
+  },
+  {
+    id: 2,
+    title: 'Врачи и клиники',
+    icon: icn_stethoscope,
+    active: false
+  },
+  {
+    id: 3,
+    title: 'Сообщения',
+    icon: icn_message,
+    active: false
+  },
+  {
+    id: 4,
+    title: 'Тестирование',
+    icon: icn_todo,
+    active: false
+  },
+  {
+    id: 5,
+    title: 'Полезно знать',
+    icon: icn_book,
+    active: false
+  },
+]
 
 const NavAside = () => {
   return (
@@ -11,27 +43,12 @@ const NavAside = () => {
       <Nav>
         <Logo>Логотип</Logo>
         <NavList>
-          {/* Пункты лучше убрать в массив. и по нему проходиться .map*/}
-          <ListItem className="active">
-            <ItemIcon>{icn__heart}</ItemIcon>
-            <ItemLink>Профиль</ItemLink>
-          </ListItem>
-          <ListItem>
-            <ItemIcon>{icn__stethoscope}</ItemIcon>
-            <ItemLink>Врачи и клиники</ItemLink>
-          </ListItem>
-          <ListItem>
-            <ItemIcon>{icn__message}</ItemIcon>
-            <ItemLink>Сообщения</ItemLink>
-          </ListItem>
-          <ListItem>
-            <ItemIcon>{icn__todo}</ItemIcon>
-            <ItemLink>Тестирование</ItemLink>
-          </ListItem>
-          <ListItem>
-            <ItemIcon>{icn__book}</ItemIcon>
-            <ItemLink>Полезно знать</ItemLink>
-          </ListItem>
+        {NAV.map((item, i) => {
+          return (<ListItem key={i} className={`${item.active ? "active" : ""}`}>
+            <ItemIcon>{item.icon}</ItemIcon>
+            <ItemLink>{item.title}</ItemLink>
+          </ListItem>)
+        })}
         </NavList>
         <Button>
           <UiButton large className="btn">
@@ -41,10 +58,10 @@ const NavAside = () => {
       </Nav>
       <Copy>
         <CopyItem>
-          <ItemIcon>{icn__help}</ItemIcon>
+          <ItemIcon>{icn_help}</ItemIcon>
           <ItemLink>Профиль</ItemLink>
         </CopyItem>
-        <CopyLogo src={img__logo} />
+        <CopyLogo src={img_logo} />
       </Copy>
     </Wrapper>
   );
@@ -62,7 +79,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Nav = styled.div``;
+const Nav = styled.nav``;
 
 const NavList = styled.ul`
   margin-top: 18px;

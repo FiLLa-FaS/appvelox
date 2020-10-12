@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import img__profile from "../../assets/images/img__profile.png";
-import {icn__magnifier, icn__bell, icn__eye, icn__check} from '../../assets/icons'
+import img_profile from "../../assets/images/img_profile.png";
+import {icn_magnifier, icn_bell, icn_eye, icn_check} from '../../assets/icons'
 
 const Header = () => {
   return (
@@ -9,13 +9,13 @@ const Header = () => {
       <Title>Мой профиль</Title>
       <Info>
         <Nav>
-          <Icon>{icn__magnifier}</Icon>
-          <Icon>{icn__bell}</Icon>
-          <Icon>{icn__eye}</Icon>
+          <Icon>{icn_magnifier}</Icon>
+          <Icon>{icn_bell}</Icon>
+          <Icon>{icn_eye}</Icon>
         </Nav>
         <Profile>
-          <ProfileImg src={img__profile} />
-          <ProfileIcon>{icn__check}</ProfileIcon>
+          <ProfileImg src={img_profile} />
+          <ProfileIcon>{icn_check}</ProfileIcon>
         </Profile>
       </Info>
     </Wrapper>

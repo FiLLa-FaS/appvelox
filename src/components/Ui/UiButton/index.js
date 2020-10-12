@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const UiButton = ({ large, children }) => {
-  // Чтобы не передавать в дальнейшем все пропсы по отдельности. Принимай ...props и так же прокидывай в <Wrapper {...props}></Wrapper> 
-  return <Wrapper large={large}>{children}</Wrapper>;
+const UiButton = ({ large, children, ...props }) => {
+  return <Wrapper large={large} {...props}>{children}</Wrapper>;
 };
 
 const Wrapper = styled.button`
