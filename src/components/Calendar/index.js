@@ -1,18 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import Calendar from "react-calendar";
-// Используй date-fns для работы с датами.
+import { isSameDay } from 'date-fns'
 
 const ReactCalendar = ({ orders, onSelectDate  }) => {
 
     const renderDay = (orders, date) => {
 
-      // Вот это я тебе в аудиозаписи запишу
       const todayTasks = orders.filter(
         (order) =>
-          (order.date.getDate() === date.date.getDate()) &
-          (order.date.getMonth() === date.date.getMonth()) &
-          (order.date.getFullYear() === date.date.getFullYear())).length
+        isSameDay(order.date, date.date)).length
 
     return (<div className={`${todayTasks === 0 ? 'disabled' : ''}`}>
      <div className="cards-count">{todayTasks}</div>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { CardFeature } from "../..";
 import {icn_info, icn_tubes, icn_file, icn_clock} from '../../../assets/icons'
 
-const features = [
+const FEATURES = [
   {
     title: "Информация о пациенте",
     content: ['Ваши личные данные', 'Рекомендации врачей', 'История болезней'],
@@ -33,7 +33,7 @@ const features = [
 const WidgetFeatures = () => {
   return (
     <Wrapper>
-    {features.map((feature, i) => {
+    {FEATURES.map((feature, i) => {
           return <CardFeature key={i} feature={feature} />;
         })}
     </Wrapper>

@@ -1,40 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { format } from 'date-fns'
+import ru from "date-fns/locale/ru";
 import { UiButton } from "../..";
+import capitalize from '../../../helpers/capitalize'
 
 const CardOrder = ({ order, className }) => {
   const showDate = () => {
-
-    // Это очень много для того, чтобы просто показать дату. Испозльзуй date-fns. Там это пару строк, если не одна.
-    let days = [
-      "Воскресенье",
-      "Понедельник",
-      "Вторник",
-      "Среда",
-      "Четверг",
-      "Пятница",
-      "Суббота",
-    ];
-    const weekday = days[order.date.getDay()];
-    const year = order.date.getFullYear() % 100;
-    let day = order.date.getDate();
-    if (day < 10) {
-      day = "0" + day;
-    }
-    let month = order.date.getMonth() + 1;
-    if (month < 10) {
-      month = "0" + month;
-    }
-    let hours = order.date.getHours();
-    if (hours < 10) {
-      hours = "0" + hours;
-    }
-    let minutes = order.date.getMinutes();
-    if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    return `${weekday} ${day}.${month}.${year} | ${hours}:${minutes}`;
+    return capitalize(format(order.date, 'EEEE dd.MM.yy | HH:mm', {locale: ru}))
   };
 
   return (

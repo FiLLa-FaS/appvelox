@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { isSameDay } from 'date-fns'
 import { Calendar, WidgetScroll } from "./components";
 import img_doctor from "./assets/images/img_doctor.png";
 import img_doctor2 from "./assets/images/img_doctor2.png";
@@ -55,10 +56,7 @@ function ViewOrders() {
 
   let currentOrders = sortedOrders.filter(
     (order) =>
-      (order.date.getDate() === currentDate.getDate()) &
-      (order.date.getMonth() === currentDate.getMonth()) &
-      (order.date.getFullYear() === currentDate.getFullYear())
-  );
+    isSameDay(order.date, currentDate))
 
   const onSelectDate = (value) => {
     setCurrentDate(value);
